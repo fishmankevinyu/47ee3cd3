@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' webpack --mode production"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
