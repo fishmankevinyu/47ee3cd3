@@ -12,7 +12,7 @@ const Footer = ({onActivity, screenSelected}) => {
         <div className='row footer-container'>
             <div className='col icon-container' onClick={onActivity}>
                 {selectBar}
-                <img className='icon' src="https://assets.stickpng.com/images/5a452601546ddca7e1fcbc87.png" alt="" />
+                <img className='icon' src="https://cdn-icons-png.flaticon.com/512/6815/6815116.png" alt="" />
             </div>
             <div className='col icon-container'>
                 <img className='icon' src="https://cdn-icons-png.flaticon.com/512/5987/5987424.png" alt="" />
