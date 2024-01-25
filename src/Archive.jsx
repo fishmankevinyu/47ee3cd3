@@ -27,7 +27,7 @@ const Archive = ( {onCallClick} ) => {
     }
     const sortCalls = (newcalls) => {
         if (newcalls.length == 0) {
-            setTabs([<hr className='hr-text' data-content="Nothing here"/>]);
+            setTabs([<hr key='0' className='hr-text' data-content="Nothing here"/>]);
             return newcalls;
         }
         for (var newcall of newcalls) {
@@ -44,18 +44,18 @@ const Archive = ( {onCallClick} ) => {
         });
         var newtabs = [];
         var d = new Date(newcalls[0].created_at);
-        newtabs.push(<hr className='hr-text' data-content={datetoText(d)}/>);
+        newtabs.push(<hr key={datetoText(d)} className='hr-text' data-content={datetoText(d)}/>);
         for (var i = 0; i < newcalls.length - 1; i++) {
             var d1 = new Date(newcalls[i].created_at);
             var d2 = new Date(newcalls[i+1].created_at);
             d1.setHours(0,0,0,0);
             d2.setHours(0,0,0,0);
-            newtabs.push(<Call call={newcalls[i]} onCallClick={onCallClick}/>);
+            newtabs.push(<Call key={newcalls[i].id} call={newcalls[i]} onCallClick={onCallClick}/>);
             if (d1 - d2 != 0) {
-                newtabs.push(<hr className='hr-text' data-content={datetoText(d2)}/>);
+                newtabs.push(<hr key={datetoText(d2)} className='hr-text' data-content={datetoText(d2)}/>);
             }
         }
-        newtabs.push(<Call call={newcalls[newcalls.length - 1]} onCallClick={onCallClick}/>);
+        newtabs.push(<Call key={newcalls[newcalls.length - 1].id} call={newcalls[newcalls.length - 1]} onCallClick={onCallClick}/>);
         setTabs(newtabs);
     }
     
